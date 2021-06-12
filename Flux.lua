@@ -1797,7 +1797,7 @@ function Flux:Window(text, bottom,mainclr,toclose)
                     
                 Item.Name = "Item"
                 Item.Parent = DropItemHolder
-                Item.BackgroundColor3 = Color3.fromRGB(6, 140, 127)
+                Item.BackgroundColor3 = Color3.fromRGB(64, 68, 75)
                 Item.ClipsDescendants = true
                 Item.Size = UDim2.new(0, 427, 0, 25)
                 Item.AutoButtonColor = false
@@ -1873,7 +1873,6 @@ function Flux:Window(text, bottom,mainclr,toclose)
                         Container.CanvasSize = UDim2.new(0, 0, 0, ContainerLayout.AbsoluteContentSize.Y)
                     end)
                 end
-            end
             if DropToggled == true then
                 Title.Text = Selected
                 Dropdown:TweenSize(UDim2.new(0, 457, 0, 43), Enum.EasingDirection.Out, Enum.EasingStyle.Quart, .6, true)
@@ -1915,6 +1914,7 @@ function Flux:Window(text, bottom,mainclr,toclose)
                 wait(.4)
                 Container.CanvasSize = UDim2.new(0, 0, 0, ContainerLayout.AbsoluteContentSize.Y)
             end
+		end
 			return DropFunc
 		end
 		function ContainerContent:Colorpicker(text,preset,callback)
