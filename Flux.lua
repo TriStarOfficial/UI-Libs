@@ -1776,7 +1776,7 @@ function Flux:Window(text, bottom,mainclr,toclose)
       function DropFunc:Refresh(text,newlist)
             Title.Text = text
             FrameSize = 0
-            newItemCount = 0
+            local newItemCount = 0
             for i, v in next, DropItemHolder:GetChildren() do
                 if v.Name == "Item" then
                     v:Destroy()
@@ -1870,7 +1870,7 @@ function Flux:Window(text, bottom,mainclr,toclose)
                             {TextTransparency = 0.3}
                         ):Play()
                         wait(.4)
-                        SelectedPage.CanvasSize = UDim2.new(0, 0, 0, SelectedPageList.AbsoluteContentSize.Y)
+                        Container.CanvasSize = UDim2.new(0, 0, 0, ContainerLayout.AbsoluteContentSize.Y)
                     end)
                 end
             end
@@ -1913,7 +1913,7 @@ function Flux:Window(text, bottom,mainclr,toclose)
                     {TextTransparency = 0.3}
                 ):Play()
                 wait(.4)
-                SelectedPage.CanvasSize = UDim2.new(0, 0, 0, SelectedPageList.AbsoluteContentSize.Y)
+                Container.CanvasSize = UDim2.new(0, 0, 0, ContainerLayout.AbsoluteContentSize.Y)
             end
 			return DropFunc
 		end
