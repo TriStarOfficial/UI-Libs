@@ -1332,6 +1332,11 @@ function finity.new(isdark, gprojectName, thinProject)
 						function cheat:SetValue(val)
 							cheat.button.Text = val or val.Text
 						end
+						function cheat:Onclick(call)
+							cheat.button.MouseButton1Click:connect(function()
+								pcall(call)
+							end)
+						end
 
 						cheat.background.Parent = cheat.container
 						cheat.button.Parent = cheat.container
