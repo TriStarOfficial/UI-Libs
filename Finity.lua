@@ -1329,6 +1329,9 @@ function finity.new(isdark, gprojectName, thinProject)
 								if not s then warn("error: ".. e) end
 							end
                         end
+						function cheat:SetValue(val)
+							cheat.button.Text = val or val.Text
+						end
 
 						cheat.background.Parent = cheat.container
 						cheat.button.Parent = cheat.container
