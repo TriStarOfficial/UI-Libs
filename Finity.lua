@@ -976,11 +976,22 @@ function finity.new(isdark, gprojectName, thinProject)
 						
 						function cheat:AddOption(value)
 							if type(value) == "table" then
-								for i, v in value
+								for i, v in next, value do
 									table.insert(options, v)
+									refreshOptions()
 								end
-								refreshOptions()
 							end
+						end
+					
+						function cheat:Refresh(vals)
+							if type(vals) == "table" then
+								table.clear(options)
+								wait()
+								for index2, add in next, vals do
+									table.insert(options, add)
+									refreshOptions()
+								end
+							end						
 						end
 						
 						function cheat:SetValue(value)
