@@ -986,6 +986,7 @@ function finity.new(isdark, gprojectName, thinProject)
 						function cheat:Refresh(vals)
 							if type(vals) == "table" then
 								table.clear(options)
+								refreshOptions()
 								wait()
 								for index2, add in next, vals do
 									table.insert(options, add)
