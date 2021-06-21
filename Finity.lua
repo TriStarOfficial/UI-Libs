@@ -963,11 +963,8 @@ function finity.new(isdark, gprojectName, thinProject)
 						function cheat:RemoveOption(value)
 							local removed = false
 							for index, option in next, options do
-								if option == value then
-									table.remove(options, index)
+								table.remove(options, index)
 									removed = true
-									break
-								end
 							end
 							
 							if removed then
@@ -978,9 +975,12 @@ function finity.new(isdark, gprojectName, thinProject)
 						end
 						
 						function cheat:AddOption(value)
-							table.insert(options, value)
-							
-							refreshOptions()
+							if type(value) == "table" then
+								for i, v in value
+									table.insert(options, v)
+								end
+								refreshOptions()
+							end
 						end
 						
 						function cheat:SetValue(value)
